@@ -12,13 +12,13 @@ class Pawn:
             self.team = "Human"
             self.move = None
 
-    def convert_tile_to_verticies(tile):
+    def convert_tile_to_verticies(self, tile):
         converter = {
-            [1,1]: [[5,5], [55, 55]],
-            [2,1]: [[10, 5], [60, 55]],
-            [3,1]: [[15, 5], [65, 55]],
-            [1,2]: [[5, 10], [55, 65]],
-            [2,2]: [[10, 10], [60, 65]]
+            str([1,1]): [[5,5], [55, 5], [55, 55], [5, 55]],
+            str([2,1]): [[10, 5], [60, 5], [60, 55], [10, 55]],
+            str([3,1]): [[15, 5], [65, 5], [65, 55], [15, 55]],
+            str([1,2]): [[5, 10], [55, 10], [55, 65], [5, 65]],
+            str([2,2]): [[10, 10], [60, 10], [60, 65], [10, 65]]
             }
-        return converter[tile]
+        return converter[str(tile)]
                 

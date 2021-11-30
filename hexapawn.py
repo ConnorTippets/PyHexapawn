@@ -16,7 +16,10 @@ while running:
         if event.type == QUIT:
             running=False
     screen.fill((0,0,0,0))
-    for team in teams:
+    for team in teams.values():
+        print(team)
         for pawn in team.pawns:
             verticies = pawn.convert_tile_to_verticies(pawn.tile)
-            pygame.draw.polygon(screen, colors[str(team)], verticies)
+            pygame.draw.polygon(screen, colors[team.str()], verticies)
+    pygame.display.flip()
+    clock.tick(60)
